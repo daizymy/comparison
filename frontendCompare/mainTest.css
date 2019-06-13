@@ -1,4 +1,7 @@
 @media screenand (max-width: 768px) {
+  img {
+    max-width: 100%;
+  }
   tr {
  display: flex;
  flex-flow: row wrap;
