@@ -1,92 +1,38 @@
-/* === General calendar styling === */
-.calendarWrapper {padding:5px;margin-bottom:30px;}
-.bgGradient {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c7438e+0,4880c0+100 */
-background: #c7438e; /* Old browsers */
-background: -moz-linear-gradient(-45deg, #c7438e 0%, #4880c0 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg, #c7438e 0%,#4880c0 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg, #c7438e 0%,#4880c0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+.padding-0 {
+	padding-left: 0;
+	padding-right: 0;
 }
 
-.calendarResultsTable {margin-top:15px;}
+.product {
+    list-style-type: none;
+    border: 1px solid #B5B4B7;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
 
-.calendarNav {display:flex;flex-flow: row wrap;justify-content: space-between;margin-bottom:10px;}
-.calendarNav {font-size:22px;font-weight:bold;}
-.calendarNav a {font-size:36px;display:inline-block;width:50px;text-align:center;line-height:22px;text-decoration:none;color:#3e3e3e;cursor:pointer;}
+.product:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
 
-.calendar  {margin-top:15px;margin-bottom:15px;}
+.product .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
 
-.calendarDays {display:flex;flex-flow: row wrap;padding:0;}
+.product li {
+    border-bottom: 1px solid #B5B4B7;
+    padding: 10px;
+    text-align: center;
+}
 
-.day {position:relative;list-style-type:none;float:left;width: 14.27%;height: 0;padding-bottom: 14%;text-align:center;border-radius:100%;background-color:#f0f0f0;}
-.day.placeholder {background-color:white;}
-.day div:first-child {position: absolute;top: 50%;left: 50%; transform: translate(-50%, -50%);}
-.day.fertility {background-color: #B5CBE6}
-.day.ovulation {background-color: #699AD2;color:white}
-.day.ovulation2 {background-color: #699AD2;color:white}
-.day.periods {background-color: #f09fcd}
-.day.urintest {background-color: #f09fcd}
-.day.delivery90 {background-color: #f5d4e6}
-.day.today {background-color:#ccc;color:#c7438e;}
-.day.birthdate {background-color: #c7438e; color:white;}
+.product .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
 
-.day .icon {height:40%;width:40%;position:absolute;right:0;top:0;background-position: right top;background-repeat:no-repeat;}
-.day.ovulation .icon {background-image:url(//www.babyartikel.de/magazin//wp-content/plugins/wp-ba-calendars/img/heart-blue.svg)}
-.day.bloodtest .icon {background-image:url(//www.babyartikel.de/magazin//wp-content/plugins/wp-ba-calendars/img/drop-pink.svg)}
-.day.urintest .icon {background-image:url(//www.babyartikel.de/magazin//wp-content/plugins/wp-ba-calendars/img/drop-orange.svg)}
-.day.newwop .icon {background-color: #e180b7;border-radius:100%;font-size:12px;color:white;left:0;}
-@media(min-width:575px) {.day.newwop .icon {font-size:16px;}}
-.day.newwop .icon::after {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
-.day.newwop0 .icon::after {content: "1"}
-.day.newwop1 .icon::after {content: "2"}
-.day.newwop2 .icon::after {content: "3"}
-.day.newwop3 .icon::after {content: "4"}
-.day.newwop4 .icon::after {content: "5"}
-.day.newwop5 .icon::after {content: "6"}
-.day.newwop6 .icon::after {content: "7"}
-.day.newwop7 .icon::after {content: "8"}
-.day.newwop8 .icon::after {content: "9"}
-.day.newwop9 .icon::after {content: "10"}
-.day.newwop10 .icon::after {content: "11"}
-.day.newwop11 .icon::after {content: "12"}
-.day.newwop12 .icon::after {content: "13"}
-.day.newwop13 .icon::after {content: "14"}
-.day.newwop14 .icon::after {content: "15"}
-.day.newwop15 .icon::after {content: "16"}
-.day.newwop16 .icon::after {content: "17"}
-.day.newwop17 .icon::after {content: "18"}
-.day.newwop18 .icon::after {content: "19"}
-.day.newwop19 .icon::after {content: "20"}
-.day.newwop20 .icon::after {content: "21"}
-.day.newwop21 .icon::after {content: "22"}
-.day.newwop22 .icon::after {content: "23"}
-.day.newwop23 .icon::after {content: "24"}
-.day.newwop24 .icon::after {content: "25"}
-.day.newwop25 .icon::after {content: "26"}
-.day.newwop26 .icon::after {content: "27"}
-.day.newwop27 .icon::after {content: "28"}
-.day.newwop28 .icon::after {content: "29"}
-.day.newwop29 .icon::after {content: "30"}
-.day.newwop30 .icon::after {content: "31"}
-.day.newwop31 .icon::after {content: "32"}
-.day.newwop32 .icon::after {content: "33"}
-.day.newwop33 .icon::after {content: "34"}
-.day.newwop34 .icon::after {content: "35"}
-.day.newwop35 .icon::after {content: "36"}
-.day.newwop36 .icon::after {content: "37"}
-.day.newwop37 .icon::after {content: "38"}
-.day.newwop38 .icon::after {content: "39"}
-.day.newwop39 .icon::after {content: "40"}
-.day.newwop40 .icon::after {content: "41"}
-.day.newwop41 .icon::after {content: "42"}
-
-.calendarLegend  {font-size:85%;list-style-type:none;padding:0;}
-.legendIcon {display:inline-block;height:15px;width:15px;border-radius:100%;background-position: center center; background-repeat:no-repeat;}
-.legendIcon.birthdate {background-color: #c7438e}
-.legendIcon.fertility {background-color: #B5CBE6}
-.legendIcon.periods {background-color: #f09fcd}
-.legendIcon.delivery90 {background-color: #f5d4e6}
-.legendIcon.urintest {background-image:url(//www.babyartikel.de/magazin//wp-content/plugins/wp-ba-calendars/img/drop-orange.svg)}
-.legendIcon.bloodtest {background-image:url(//www.babyartikel.de/magazin//wp-content/plugins/wp-ba-calendars/img/drop-pink.svg)}
-.legendIcon.ovulation {background-image:url(//www.babyartikel.de/magazin//wp-content/plugins/wp-ba-calendars/img/heart-blue.svg)}
-.legendIcon.ovulation2{background-color: #699AD2}
-.legendIcon.newwop  {background-color: #e180b7;}
+.compHeader {
+    min-height: 300px;
+}

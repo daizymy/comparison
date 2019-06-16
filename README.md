@@ -1,2 +1,1 @@
-# comparison
-# comparsion
+# BabyArtikel product comparison plugin
