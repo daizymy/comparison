@@ -8,14 +8,16 @@ $(document).ready(function() {
     var productFeatures = {};
     var productCodeArr = $("#compareItems").val().split(",");
 
-    productCodeArr.forEach(function(element) {
-        getProductData(element, products, features, productFeatures);
+    productCodeArr.forEach(function(productCode) {
+        getProductData(productCode, products, features, productFeatures);
     });
 
     window.console.log(products, features, productFeatures);
 
     // Render 1st column
-    $('#comparisonFeatures').html();
+    $('#comparisonFeatures').html('');
+    $('#comparisonProducts1').html('');
+    $('#comparisonProducts2').html('');
 
     var html = '<ul class="product">' +
         '<li class="compHeader">' +
@@ -31,16 +33,16 @@ $(document).ready(function() {
     $('#comparisonFeatures').append(html);
 
     // Render product columns
-    $('#comparisonProducts1').html('');
-    $('#comparisonProducts1').html('');
-
     products.forEach(function(product, index) {
-      html = '<div class="carousel-item' + (index == 0 ? ' active' : '') + '">' +
+
+      html =
+        '<div class="carousel-item' + (index == 0 ? ' active' : '') + '">' +
             '<ul class="product">' +
                 '<li class="compHeader">' +
                     '<p class="w3-display-middle">' +
                       '<img src="' + product.image + '" />' +
                       '<b>' + product.manufacturer + '</b> ' + product.name + '<br />' +
+                      product.price + '<br />' +
                     '</p>' +
                 '</li>';
 
@@ -55,7 +57,24 @@ $(document).ready(function() {
 
       $('#comparisonProducts1').append(html);
       $('#comparisonProducts2').append(html);
+
+
+
+
+
+
     });
+    var indicators1 = $("#comparisonCarousel1 .carousel-indicators");
+    var bootCarousel = $("#comparisonCarousel1");
+    //// TODO: bullet points id change comparsionCarousel1
+    console.log(bootCarousel.find(".carousel-inner").children(".carousel-item"));
+    bootCarousel.find(".carousel-inner").children(".carousel-item").each(function(index) {
+      console.log(index);
+      (index === 0) ?
+      indicators1.append("<li data-target='#MyCarousel' data-slide-to='" + index + "' class='active'></li>") :
+      indicators1.append("<li data-target='#MyCarousel' data-slide-to='" + index + "'></li>");
+    });
+    //indicators.append("<li data-target='#comparisonCarousel1' data-slide-to='" + index + "'></li>");
   });
 
   function getProductData(productCode, products, features, productFeatures) {
@@ -77,7 +96,8 @@ $(document).ready(function() {
           'code': productData.code,
           'name' : productData.name,
           'image' : productData.images[0].url,
-          'manufacturer' : productData.manufacturer
+          'manufacturer' : productData.manufacturer,
+          'price': productData.price.formattedValue,
         });
 
         if (productData.hasOwnProperty('classifications')) {

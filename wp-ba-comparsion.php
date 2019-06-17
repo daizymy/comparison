@@ -36,7 +36,7 @@ function wp_ba_comparsion($atts) {
 	};
 
 	wp_enqueue_script('wp-ba-comparsion', plugin_dir_url(__FILE__) . 'js/ba-comparsion.js', array('jquery'));
-	wp_enqueue_style( 'wp-ba-comparsion', plugin_dir_url(__FILE__) . 'css/main.css' );
+	wp_enqueue_style( 'wp-ba-comparsion', plugin_dir_url(__FILE__) . 'css/style.css' );
 	$result = '
 			<div class="row">
 				<div class="col-12 padding-0">
@@ -46,9 +46,11 @@ function wp_ba_comparsion($atts) {
 			</div>
 			<div class="row small" id="comparisonListWrapper">
 				<div id="comparisonFeatures" class="col-4 padding-0 compareItemParent"></div>
+
 				<div id="comparisonCarousel1" class="col-4 padding-0 carousel slide" data-ride="carousel" data-interval=false>
+					<ol class="carousel-indicators"></ol>
 					<div id="comparisonProducts1" class="carousel-inner"></div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<a class="carousel-control-prev" href="#comparisonCarousel1" role="button" data-slide="prev">
 				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				    <span class="sr-only">Previous</span>
 				  </a>
@@ -57,7 +59,9 @@ function wp_ba_comparsion($atts) {
 				    <span class="sr-only">Next</span>
 				  </a>
 				</div>
+
 				<div id="comparisonCarousel2" class="col-4 padding-0 carousel slide" data-ride="carousel" data-interval=false>
+					<ol class="carousel-indicators"></ol>
 					<div id="comparisonProducts2" class="carousel-inner"></div>
 					<a class="carousel-control-prev" href="#comparisonCarousel2" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
