@@ -63,7 +63,7 @@ function wp_ba_comparsion($atts) {
 				<div id="comparisonCarousel2" class="col-4 padding-0 carousel slide" data-ride="carousel" data-interval=false>
 					<ol class="carousel-indicators"></ol>
 					<div id="comparisonProducts2" class="carousel-inner"></div>
-					<a class="carousel-control-prev" href="#comparisonCarousel2" role="button" data-slide="prev">
+					<a class="carousel-control-prev" href="#comparisonCarousel1" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span class="sr-only">Previous</span>
 					</a>
